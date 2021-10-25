@@ -10,7 +10,13 @@
 [Back To Top](#born-2-be-root)
 
 **Born 2 Be Root** is a project made to develop the skills of VM or Server creation and maintainence.
-This is Skill Set useful for example when you need to have a mini machine to run code continously with or without supervision where it can cause no major harm.
+This is Skill Set useful for example when you need to have a mini machine to run code continously with or without supervision where it can cause no major harm
+
+The Subject Documentation goes as follows
+> You will create your first machine in `VirtualBox` (or `UTM` if you can't use `VirtualBox`)
+> under specific instructions. Then, at the end of this project, you will be able to set up
+> your own operating system while implementing strict rules.
+
 
 
 ## Creation
@@ -31,6 +37,10 @@ When downloading Debian, it is good practice to keep the "Image (ISO)" in the sa
 Assuming that you have downloaded a Debian Image you can now attach it to the VM.
 
 Enter the VMs **Settings** and navigate to **Storage**
+
+## Setup
+[Back To Top](#born-2-be-root)
+
 
 
 ## Coming Soon
