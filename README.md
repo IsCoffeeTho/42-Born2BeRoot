@@ -1,9 +1,9 @@
 # Born 2 Be Root
 [Picture Version](#coming-soon)
 ### Contents
-  1. [Introduction](#Introduction)
-  2. [Creation](#Creation)
-  3. [Setting Up](#Setup)
+  1. [Introduction](#introduction)
+  2. [Creation](#creation)
+  3. [Setting Up](#setting-up)
   4. []()
 
 ## Introduction
@@ -36,9 +36,12 @@ After the creation of the drive you are ready to install [**Debian**](<DEBIAN-Do
 When downloading Debian, it is good practice to keep the "Image (ISO)" in the same folder and the "Drive (VDI)".
 Assuming that you have downloaded a Debian Image you can now attach it to the VM.
 
-Enter the VMs **Settings** and navigate to **Storage**
+Enter the VMs **Settings** and navigate to **Storage**. Under `Controller: IDE` Select the icon next to 'Optical Drive'.  
+Select `Choose a Virtual Optical Disk File...` and then navigate to your 'Image' of choice.
 
-## Setup
+You are now ready to get started setting up your VM.
+
+## Setting Up
 [Back To Top](#born-2-be-root)
 
 
