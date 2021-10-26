@@ -51,7 +51,7 @@ You are now ready to get started setting up your VM.
 [Back To Top](#born-2-be-root)
 
 ### Background - Headless Machines
-A Normal Machine is a machine you are probably used to, it has a screen with graphics that has graphics.
+In Computing (Hardware), the head of a machine refers to the Display Monitor. 
 
 
 
