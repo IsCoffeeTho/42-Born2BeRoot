@@ -11,8 +11,8 @@
 ## Introduction
 [Back To Top](#born-2-be-root)
 
-**Born 2 Be Root** is a project made to develop the skills of VM or Server creation and maintainence.
-This is Skill Set useful for example when you need to have a mini machine to run code continously with or without supervision where it can cause no major harm
+**Born 2 Be Root** is a project made to develop the skills of **VM** (**V**irtual **M**achine) or Server creation and maintainence.
+This is Skill Set useful for example when you need to have a mini machine to run code continously with or without supervision where it can cause no major harm.
 
 The Subject Documentation goes as follows
 > You will create your first machine in `VirtualBox` (or `UTM` if you can't use `VirtualBox`)
@@ -53,6 +53,11 @@ You are now ready to get started setting up your VM.
 ### Background - Headless Machines
 In Computing (Hardware), the head of a machine refers to the Display Monitor. 
 
+When a machine has a monitor connected and its an active display, the device is considered to have a 'Head'
+
+Likewise with a machine that is able to run without any graphical interface,
+it is considered that the machine can run in 'Headless mode'.
+A Headless machine runs all the same with a monitor and without.
 
 
 ### Installation Process
