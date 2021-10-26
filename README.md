@@ -3,8 +3,10 @@
 ### Contents
   1. [Introduction](#introduction)
   2. [Creation](#creation)
-  3. [Setting Up](#setting-up)
-  4. []()
+  3. [Setting Up](#setting-up)  
+     - [Background](#background---headless-machines)
+     - [Installation Process](#installation-process)
+  4. 
 
 ## Introduction
 [Back To Top](#born-2-be-root)
@@ -48,6 +50,14 @@ You are now ready to get started setting up your VM.
 ## Setting Up
 [Back To Top](#born-2-be-root)
 
+### Background - Headless Machines
+A Normal Machine is a machine you are probably used to, it has a screen with graphics that has graphics.
+
+
+
+### Installation Process
+When Booting up the VM after the ***Creation*** stage you will be greeted with the  
+`Debian GNU/Linux installer menu (BIOS mode)`
 
 
 ## Coming Soon
