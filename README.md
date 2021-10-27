@@ -17,7 +17,7 @@
 **Born 2 Be Root** is a project made to develop the skills of **VM** (**V**irtual **M**achine) or Server creation and maintainence.
 This is Skill Set useful for example when you need to have a mini machine to run code continously with or without supervision where it can cause no major harm.
 
-The Subject Documentation goes as follows
+The Subject Documentation goes as follows:
 > You will create your first machine in `VirtualBox` (or `UTM` if you can't use `VirtualBox`)
 > under specific instructions. Then, at the end of this project, you will be able to set up
 > your own operating system while implementing strict rules.
@@ -61,7 +61,7 @@ In Computing (Hardware), the head of a machine refers to the Display Monitor.
 When a machine has a monitor connected and its an active display, the device is considered to have a 'Head'
 
 Likewise with a machine that is able to run without any graphical interface,
-it is considered that the machine can run in 'Headless mode'.
+it is considered that the machine can run in 'Headless mode'.  
 A Headless machine runs all the same with a monitor and without.
 
 
@@ -77,7 +77,7 @@ It is recommened to leave the **Domain Name** blank as the machine will auto gen
 ### Setup Sequence
 Every linux has a permissions system for security of access.
 The root user has access to everything, so make sure you keep this password safe.
-The Subject states
+The Subject states:
 > * Your password has to expire every 30 days.  
 > * The minimum number of days allowed before the modification of a password will be set to 2.  
 > * The user has to receive a warning message 7 days before their password expires.  
