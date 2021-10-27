@@ -47,7 +47,12 @@ Assuming that you have downloaded a Debian Image you can now attach it to the VM
 Enter the VMs **Settings** and navigate to **Storage**. Under `Controller: IDE` Select the icon next to 'Optical Drive'.  
 Select `Choose a Virtual Optical Disk File...` and then navigate to your 'Image' of choice.
 
-You are now ready to get started setting up your VM.
+Still in the settings, go to **Network** > **Advanced Settings** > **Port Forwarding**. Add an entry with the icon on the side and cofigure it as such:  
+Name | Protocol | Host IP | Host Port | Guest IP | Guest Port
+:-- | :-- | :-- | :-- | :-- | :-- |
+Rule 1 | TCP | | 4242 | | 4242
+
+You are now **ready** to get started setting up your VM Environment.
 
 ## Setting Up
 [Back To Top](#born-2-be-root)
@@ -65,7 +70,7 @@ When Booting up the VM after the ***Creation*** stage you will be greeted with t
 `Debian GNU/Linux installer menu (BIOS mode)`  
 Because we are not using a monitor based machine, select `Install`. Select your mandatory **Lanugage**, then select your **Timezone**.  
 With selecting your keyboard, if you are not sure about the language type check with your [Country's Keyboard Layout](https://en.wikipedia.org/wiki/Keyboard_layout).
-  
+
 The Subject requires you to have your hostname as `<intra-username>42`.
 It is recommened to leave the **Domain Name** blank as the machine will auto generate a domain name.
 
@@ -74,17 +79,19 @@ Every linux has a permissions system for security of access.
 The root user has access to everything, so make sure you keep this password safe.
 The Subject states
 > * Your password has to expire every 30 days.  
-> * The minimum number of days allowed before the modification of a password willbe set to 2.  
+> * The minimum number of days allowed before the modification of a password will be set to 2.  
 > * The user has to receive a warning message 7 days before their password expires.  
-> * Your password must be at least 10 characters long. It must contain an uppercaseletter and a number.
+> * Your password must be at least 10 characters long. It must contain an uppercase letter and a number.
 > Also, it must not contain more than 3 consecutive identical characters.  
 > * The password must not include the name of the user.  
-> * The following rule does not apply to the root password: The password must haveat least 7 characters that are not part of the former password.  
+> * The following rule does not apply to the root password: The password must have at least 7 characters that are not part of the former password.  
 > * Of course, your root password has to comply with this policy.
 
 When creating the 'user' the `Full name for the new user:` can be anything you like,  
-However the `Username for your account:` must be your `<inta-username>`.
+However the `Username for your account:` must be your `<inta-username>`.  
+Configure the Timezone to the closest area availble.
 
+#### Guided Partitioning
 
 
 ## Coming Soon
