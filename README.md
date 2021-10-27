@@ -11,7 +11,7 @@
 ## Introduction
 [Back To Top](#born-2-be-root)
 
-**Born 2 Be Root** is a project made to develop the skills of **VM** (**V**irtual **M**achine) or Server creation and maintainence.
+**Born\ 2\ Be\ Root** is a project made to develop the skills of **VM** (**V**irtual **M**achine) or Server creation and maintainence.
 This is Skill Set useful for example when you need to have a mini machine to run code continously with or without supervision where it can cause no major harm.
 
 The Subject Documentation goes as follows
@@ -28,9 +28,9 @@ The Subject Documentation goes as follows
 ## Creation
 [Back To Top](#born-2-be-root)
 
-To get Started open `Virtual Box` by Oracle. Click on _New_ and name your machine.
+To get Started open `VirtualBox` by Oracle. Click on _New_ and name your machine.
 When selecting Type use the `Linux` with the `Debian` option as that is the OS this guide is made for.
-Leave the memory at `1024 MG` (`1GB`).
+Leave the memory at `1024 MB` (`1GB`).
 
 When creating the "Drive", make a `VDI` (Virtual Disk Image) that is Dynamically allocated.
 A very important step of the creation of the drive is to
@@ -62,7 +62,16 @@ A Headless machine runs all the same with a monitor and without.
 When Booting up the VM after the ***Creation*** stage you will be greeted with the  
 `Debian GNU/Linux installer menu (BIOS mode)`  
 Because we are not using a monitor based machine, select `Install`. Select your mandatory **Lanugage**, then select your **Timezone**.  
-With selecting your keyboard, if you are not sure about the language type check with your [countries keyboard standard](https://en.wikipedia.org/wiki/Keyboard_layout).
+With selecting your keyboard, if you are not sure about the language type check with your [Country's Keyboard Layout](https://en.wikipedia.org/wiki/Keyboard_layout).
+  
+The Subject requires you to have your hostname as `<intra-username>42`.
+It is recommened to leave the **Domain Name** blank as the machine will auto generate a domain name.
+
+Every linux has a permissions system for security of access.
+The root user has access to everything, so make sure you keep this password safe.  
+When creating the user, you can make the `Full name for the new user:` anything you like
+however the `Username for your account:` must be `<inta-username>`.
+
 
 ## Coming Soon
 [Back To Top](#born-2-be-root)
