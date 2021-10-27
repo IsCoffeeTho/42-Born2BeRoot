@@ -3,15 +3,16 @@
 ### Contents
   1. [Introduction](#introduction)
   2. [Creation](#creation)
-  3. [Setting Up](#setting-up)  
+  3. [Setting Up](#setting-up)
      - [Background](#background---headless-machines)
      - [Installation Process](#installation-process)
-  4. 
+     - [Setup Sequence](#setup-sequence)
+  4. [Coming Soon](#coming-soon)
 
 ## Introduction
 [Back To Top](#born-2-be-root)
 
-**Born\ 2\ Be\ Root** is a project made to develop the skills of **VM** (**V**irtual **M**achine) or Server creation and maintainence.
+**Born 2 Be Root** is a project made to develop the skills of **VM** (**V**irtual **M**achine) or Server creation and maintainence.
 This is Skill Set useful for example when you need to have a mini machine to run code continously with or without supervision where it can cause no major harm.
 
 The Subject Documentation goes as follows
@@ -66,10 +67,22 @@ With selecting your keyboard, if you are not sure about the language type check 
 The Subject requires you to have your hostname as `<intra-username>42`.
 It is recommened to leave the **Domain Name** blank as the machine will auto generate a domain name.
 
+### Setup Sequence
 Every linux has a permissions system for security of access.
-The root user has access to everything, so make sure you keep this password safe.  
-When creating the user, you can make the `Full name for the new user:` anything you like
-however the `Username for your account:` must be `<inta-username>`.
+The root user has access to everything, so make sure you keep this password safe.
+The Subject states
+> • Your password has to expire every 30 days.  
+> • The minimum number of days allowed before the modification of a password willbe set to 2.  
+> •The user has to receive a warning message 7 days before their password expires.  
+> •Your password must be at least 10 characters long. It must contain an uppercaseletter and a number.
+> Also, it must not contain more than 3 consecutive identical characters.  
+> • The password must not include the name of the user.  
+> • The following rule does not apply to the root password: The password must haveat least 7 characters that are not part of the former password.  
+> • Of course, your root password has to comply with this policy.
+
+When creating the 'user' the `Full name for the new user:` can be anything you like,  
+However the `Username for your account:` must be your `<inta-username>`.
+
 
 
 ## Coming Soon
