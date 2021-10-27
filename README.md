@@ -35,8 +35,7 @@ Leave the memory at `1024 MB` (`1GB`).
 When creating the "Drive", make a `VDI` (Virtual Disk Image) that is Dynamically allocated.
 A very important step of the creation of the drive is to
 make sure you save it in a place that can store the amount of storage set (which is recommended to be a minimum of 12GB).
-
-Currently a known place is the `goinfre` subdirectory linked on the users home dir (`~/`) as noted by 42 Adelaide.
+###### DISCLAIMER: Currently a known place is the `goinfre` subdirectory linked on the users home dir (`~/`). If you are going to use the `goinfre` subdirectory to store your VM, remember to stay on that machine for the duration of the project.
 
 After the creation of the drive you are ready to install [**Debian**](<DEBIAN-Downloads.md>).
 When downloading Debian, it is good practice to keep the "Image (ISO)" in the same folder and the "Drive (VDI)".
