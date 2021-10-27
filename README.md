@@ -49,10 +49,8 @@ You are now ready to get started setting up your VM.
 
 ## Setting Up
 [Back To Top](#born-2-be-root)
-
 ### Background - Headless Machines
-In Computing (Hardware), the head of a machine refers to the Display Monitor. 
-
+In Computing (Hardware), the head of a machine refers to the Display Monitor.  
 When a machine has a monitor connected and its an active display, the device is considered to have a 'Head'
 
 Likewise with a machine that is able to run without any graphical interface,
@@ -62,8 +60,9 @@ A Headless machine runs all the same with a monitor and without.
 
 ### Installation Process
 When Booting up the VM after the ***Creation*** stage you will be greeted with the  
-`Debian GNU/Linux installer menu (BIOS mode)`
-
+`Debian GNU/Linux installer menu (BIOS mode)`  
+Because we are not using a monitor based machine, select `Install`. Select your mandatory **Lanugage**, then select your **Timezone**.  
+With selecting your keyboard, if you are not sure about the language type check with your [countries keyboard standard](https://en.wikipedia.org/wiki/Keyboard_layout).
 
 ## Coming Soon
 [Back To Top](#born-2-be-root)
