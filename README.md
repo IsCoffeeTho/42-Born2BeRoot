@@ -37,7 +37,7 @@ Leave the memory at `1024 MB` (`1GB`).
 
 When creating the "Drive", make a `VDI` (Virtual Disk Image) that is Dynamically allocated.
 A very important step of the creation of the drive is to
-make sure you save it in a place that can store the amount of storage set (which is recommended to be a minimum of 12GB).
+make sure you save it in a place that can store the amount of storage set (which is recommended to be a minimum of 15GB and a maximum of 30GB).
 ###### DISCLAIMER: Currently a known place is the `goinfre` subdirectory linked on the users home dir (`~/`). If you are going to use the `goinfre` subdirectory to store your VM, remember to stay on that machine for the duration of the project.
 
 After the creation of the drive you are ready to install [**Debian**](<DEBIAN-Downloads.md>).
@@ -92,7 +92,19 @@ However the `Username for your account:` must be your `<inta-username>`.
 Configure the Timezone to the closest area availble.
 
 #### Guided Partitioning
+The Subject requires us to make atleast two encrypted partitions using **LVM** (Logical Volume Manager).  
+When prompted select `Guided - use entier disk and set up encrypted LVM`. It will guide through creating the partitions required.
+As for the **Partitioning Scheme** select `Separate /home, /var, and /tmp partitions` then navigate over the `<Yes>`.
+It Will then start partitioning your **VM**'s drive and this process can take a while (depending on the Drive and Ram size).
 
+After the encryption of the Drive, you will nee a passphrase. The Debian installer we use has a good recommendation:
+> A good passphrase will contain a mixture of letters, numbers and punctuation. Passphrases  
+> are recommended to have a length of 20 or more characters.  
+
+This is a really good resource for the basics of secure passwords.  
+###### Disclaimer: If you mess up the password creation step, you will be forced to re-encrypt your drive.
+
+#### ...
 
 ## Coming Soon
 [Back To Top](#born-2-be-root)
