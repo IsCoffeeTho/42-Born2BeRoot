@@ -1,5 +1,5 @@
 # Born 2 Be Root
-[**Picture Version**](#coming-soon)
+[**Picture Version**](#coming-soon)  
 [**Step By Step**](#coming-soon)
 
 ### Contents
@@ -9,6 +9,9 @@
      - [Background](#background---headless-machines)
      - [Installation Process](#installation-process)
      - [Setup Sequence](#setup-sequence)
+        - [Authorization](#authorization)
+        - [Guided Partitioning](#guided-partitioning)
+        - [Package Management](#package-management)
   4. [Coming Soon](#coming-soon)
 
 ## Introduction
@@ -75,6 +78,7 @@ The Subject requires you to have your hostname as `<intra-username>42`.
 It is recommened to leave the **Domain Name** blank as the machine will auto generate a domain name.
 
 ### Setup Sequence
+#### Authorization
 Every linux has a permissions system for security of access.
 The root user has access to everything, so make sure you keep this password safe.
 The Subject states:
@@ -103,11 +107,15 @@ After the encryption of the Drive, you will nee a passphrase. The Debian install
 
 This is a really good resource for the basics of secure passwords.  
 ###### Disclaimer: If you mess up the password creation step, you will be forced to re-encrypt your drive.
+It is recommended to encrypt the full drive capacity *which will be defaulted into the prompt*.
+At this stage it also prompts you to double check that you wanted to encrypt the drives that you did.
+After verifying it will triple check, these are all security measures and in place to prevent system lockout.
 
-#### ...
+#### Package Management
+
 
 ## Coming Soon
 [Back To Top](#born-2-be-root)
 
  * A **Picture Version** of this guide is coming soon.
- * This document will also soon be made into a presentation type layout,
+ * This document will also soon be made into a presentation type layout.
