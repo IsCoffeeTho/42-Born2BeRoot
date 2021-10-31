@@ -79,6 +79,7 @@ It is recommened to leave the **Domain Name** blank as the machine will auto gen
 
 ### Setup Sequence
 #### Authorization
+[Back To Top](#born-2-be-root)  
 Every linux has a permissions system for security of access.
 The root user has access to everything, so make sure you keep this password safe.
 The Subject states:
@@ -96,6 +97,7 @@ However the `Username for your account:` must be your `<inta-username>`.
 Configure the Timezone to the closest area availble.
 
 #### Guided Partitioning
+[Back To Top](#born-2-be-root)  
 The Subject requires us to make atleast two encrypted partitions using **LVM** (Logical Volume Manager).  
 When prompted select `Guided - use entier disk and set up encrypted LVM`. It will guide through creating the partitions required.
 As for the **Partitioning Scheme** select `Separate /home, /var, and /tmp partitions` then navigate over the `<Yes>`.
@@ -112,7 +114,7 @@ At this stage it also prompts you to double check that you wanted to encrypt the
 After verifying it will triple check, these are all security measures and in place to prevent system lockout.
 
 #### Package Management
-
+[Back To Top](#born-2-be-root)  
 
 ## Coming Soon
 [Back To Top](#born-2-be-root)
