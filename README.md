@@ -99,7 +99,7 @@ Configure the Timezone to the closest area availble.
 #### Guided Partitioning
 [Back To Top](#born-2-be-root)  
 The Subject requires us to make atleast two encrypted partitions using **LVM** (Logical Volume Manager).  
-When prompted select `Guided - use entier disk and set up encrypted LVM`. It will guide through creating the partitions required.
+When prompted select `Guided - use entire disk and set up encrypted LVM`. It will guide through creating the partitions required.
 As for the **Partitioning Scheme** select `Separate /home, /var, and /tmp partitions` then navigate over the `<Yes>`.
 It Will then start partitioning your **VM**'s drive and this process can take a while (depending on the Drive and Ram size).
 
@@ -110,14 +110,77 @@ After the encryption of the Drive, you will nee a passphrase. The Debian install
 This is a really good resource for the basics of secure passwords.  
 ###### Disclaimer: If you mess up the password creation step, you will be forced to re-encrypt your drive.
 It is recommended to encrypt the full drive capacity *which will be defaulted into the prompt*.
-At this stage it also prompts you to double check that you wanted to encrypt the drives that you did.
-After verifying it will triple check, these are all security measures and in place to prevent system lockout.
+The system does two more checks to make sure you are fully aware of the changes you made to the drive.
 
 #### Package Management
 [Back To Top](#born-2-be-root)  
+
+Every Application you use on your system will either have been provided with the base **OS** or you will have to install it as a *package*.
+When prompted to `Scan extra installation media?` simply just select no.
+Selecting the mirror location choose the closest region and then the default 'domain', eg. `Australia` > `deb.debian.org`.  
+As for the proxy, it is recommended to leave it blank.
+
+If asked to participate in a survey, you can simply ignore it.
+
+After finishing the package mirror selection you will be given a multiselect panel
+```ini
+[ ] Debian desktop environment
+[ ] ... GNOME
+[ ] ... Xfce
+...
+[ ] ... LXQT
+[ ] web server
+[*] SSH server
+[*] standard system utilities
+```
+Make sure your panel looks similar to the one above.
+If so then continue.
+
+Select `<yes>` to Install GRUB boot loader, and install it to the `/sda` dir if possible.
+After all is done the system will try to reboot.
+
+## Tasks
+### SSH Server
+[Back To Top](#born-2-be-root)  
+**S**ecure **SH**ell is a Command Line Tool used to allow *secure* remote access to a server without even being in the same continent.
+If you have not done so already, generate an ssh key on the host computer using `ssh-keygen -t rsa -b 2048`.  
+
+Back to the **VM**, we will need to install the `openssh-server` package.
+It is good practice to update the package installer, to do so use the command `sudo apt-get update`[<sup>[1]</sup>](#troubleshooting).
+Then to install the **SSH Server** simply run `sudo apt install openssh-server`.
+
+Always double check that a service is running before using it, you will save yourself from debugging the wrong thing and going into loops.
+a simple command to check if the SSH server is running `sudo systemctl status ssh`.  
+It should return:
+```
+• ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (XXX)
+     Active: active (running) since Ddd YYY-MM-DD HH:MM:SS TMZN; XXX ago
+       Docs: man:ssh(8)
+             man:sshd_config(5)
+    Process: XXX
+   Main PID: XXX (sshd)
+      Tasks: 1 (limit: XXX)
+     Memory: XXX
+        CPU: XXX
+     CGroup: XXX
+     
+XXX <intra-username>42 systemd[1]: Starting OpenBSD Secure Shell server...
+XXX <intra-username>42 sshd[XXX]: Server listening on 0.0.0.0 port 22.
+XXX <intra-username>42 sshd[XXX]: Server listening on :: port 22.
+XXX <intra-username>42 systemd[1]: Started OpenBSD Secure Shell server.
+```
+As long as `grep Active: <<< $(sudo systemctl status ssh)` returns:  
+`Active: active (running) since Ddd YYY-MM-DD HH:MM:SS TMZN; XXX ago`
+You should be ok
+
+## Troubleshooting
+1. [`sudo apt-get update`](#ssh-server) returning `-bash: sudo: command not found`, just continue from root by typing `su -` and then the root password.
+run every subsequent command without `sudo` in front
+2. 
 
 ## Coming Soon
 [Back To Top](#born-2-be-root)
 
  * A **Picture Version** of this guide is coming soon.
- * This document will also soon be made into a presentation type layout.
+ * This Document will also soon be made into a presentation type layout.
