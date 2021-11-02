@@ -136,12 +136,13 @@ After finishing the package mirror selection you will be given a multiselect pan
 Make sure your panel looks similar to the one above.
 If so then continue.
 
-Select `<yes>` to Install GRUB boot loader, and install it to the `/sda` dir if possible.
+Select `<yes>` to Install GRUB boot loader, and install it to the `/dev/sda` dir if possible.
 After all is done the system will try to reboot.
 
 ## Tasks
 ### SSH Server
-[Back To Top](#born-2-be-root)  
+[Back To Top](#born-2-be-root)
+#### Setting up SSH
 **S**ecure **SH**ell is a Command Line Tool used to allow *secure* remote access to a server without even being in the same continent.
 If you have not done so already, generate an ssh key on the host computer using `ssh-keygen -t rsa -b 2048`.  
 
@@ -171,13 +172,34 @@ XXX <intra-username>42 sshd[XXX]: Server listening on :: port 22.
 XXX <intra-username>42 systemd[1]: Started OpenBSD Secure Shell server.
 ```
 As long as `grep Active: <<< $(sudo systemctl status ssh)` returns:  
-`Active: active (running) since Ddd YYY-MM-DD HH:MM:SS TMZN; XXX ago`
-You should be ok
+`Active: active (running) since Ddd YYY-MM-DD HH:MM:SS TMZN; XXX ago`  
+You should be ok.
+
+Now we have to configure the server to use the ports that **SSH** is meant to run on for the subject (4242),
+That means we need edit the *config* file for the SSH Service.
+Using `sudo <vim/nano> /etc/ssh/sshd_config`[<sup>[2]</sup>](#troubleshooting) replace `<vim/nano>` with the text editor of choice.
+Double check that you are editing the `/etc/ssh/sshd_config` file and not the `.../ssh_config` file.  
+Find the line that says `#Port 22` and replace `#Port 22` with `Port 4242` resulting with:
+```sh
+Include /etc/ssh/sshd_config.d/*.conf
+
+Port 4242
+#AddressFamily any
+```
+Then restart ssh using `service ssh restart` to update the servers port.
+
+#### SSH Firewall
+Now we need to allow the port to talk from the **VM** to the network.
+We will be using the package `ufw` to enable and disable communication ports.
+Let's start by installing the package by doing `sudo apt install ufw`.
+
+You should be able to use the ssh client on the Host machine to connect to the server.
+#### Connecting SSH
 
 ## Troubleshooting
 1. [`sudo apt-get update`](#ssh-server) returning `-bash: sudo: command not found`, just continue from root by typing `su -` and then the root password.
 run every subsequent command without `sudo` in front
-2. 
+2. [`sudo <vim/nano> /etc/ssh/sshd_config`](#ssh-server) returning `-bash: vim: command not found`, reinstall `vim` or `nano` using `sudo apt install <vim/nano>`.
 
 ## Coming Soon
 [Back To Top](#born-2-be-root)
