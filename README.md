@@ -210,15 +210,11 @@ Now that we have configued and setup the necessary system to use SSH, we can fin
 Open up your favourite terminal app on the Host Machine and double check that `OpenSSH client` is installed by doing [__`ssh -V`__](# "Version check for SSH").
 We will now need to generate an SSH Key (You can skip this part if you already have a key), run `ssh-keygen -t rsa -b 1024 [-C comment]`.
 
-
-## Troubleshooting
+## Submission
 [Back To Top](#born-2-be-root)  
-1. [`sudo apt-get update`](#ssh-server) returning `-bash: sudo: command not found`, just continue from root by typing `su -` and then the root password.
-run every subsequent command without `sudo` in front
-2. [`sudo <vim/nano> /etc/ssh/sshd_config`](#ssh-server) returning `-bash: vim: command not found`, reinstall `vim` or `nano` using `sudo apt install <vim/nano>`.
+*This section is incomplete, either its soon to be written or is being written*
 
 ## Coming Soon
-[Back To Top](#born-2-be-root)
-
+[Back To Top](#born-2-be-root)  
  * A **Picture Version** of this guide is coming soon.
  * This Document will also soon be made into a presentation type layout.
