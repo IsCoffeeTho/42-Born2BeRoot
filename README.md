@@ -210,6 +210,8 @@ Now that we have configued and setup the necessary system to use SSH, we can fin
 Open up your favourite terminal app on the Host Machine and double check that `OpenSSH client` is installed by doing [__`ssh -V`__](# "Version check for SSH").
 We will now need to generate an SSH Key (You can skip this part if you already have a key), run `ssh-keygen -t rsa -b 1024 [-C comment]`.
 
+
+
 ## Submission
 [Back To Top](#born-2-be-root)  
 *This section is incomplete, either its soon to be written or is being written*
