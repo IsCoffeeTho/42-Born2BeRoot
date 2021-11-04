@@ -12,7 +12,12 @@
         - [Authorization](#authorization)
         - [Guided Partitioning](#guided-partitioning)
         - [Package Management](#package-management)
-  4. [Coming Soon](#coming-soon)
+  4. [Tasks](#tasks)
+     1. [SSH Server](#ssh-server)
+        * [Setting up SSH](#setting-up-ssh)
+        * [SSH Firewall](#ssh-firewall)
+        * [Connecting To VM using SSH](#connecting-to-vm-using-ssh)
+  5. [Coming Soon](#coming-soon)
 
 ## Introduction
 [Back To Top](#born-2-be-root)
@@ -43,12 +48,12 @@ A very important step of the creation of the drive is to
 make sure you save it in a place that can store the amount of storage set (which is recommended to be a minimum of 15GB and a maximum of 30GB).
 ###### DISCLAIMER: Currently a known place is the `goinfre` subdirectory linked on the users home dir (`~/`). If you are going to use the `goinfre` subdirectory to store your VM, remember to stay on that machine for the duration of the project.
 
-After the creation of the drive you are ready to install [**Debian**](<DEBIAN-Downloads.md>).
-When downloading Debian, it is good practice to keep the "Image (ISO)" in the same folder and the "Drive (VDI)".
-Assuming that you have downloaded a Debian Image you can now attach it to the VM.
+After the creation of the drive you are ready to install [**Debian**](DEBIAN-Downloads.md "Download Page for Debian Images").
+When downloading Debian, it is good practice to keep the ["Image (ISO)"](# "This file acts like a disk") in the same folder and the "Drive (VDI)".
+Assuming that you have downloaded a Debian Image you can now attach it to the **VM**.
 
 Enter the VMs **Settings** and navigate to **Storage**. Under `Controller: IDE` Select the icon next to 'Optical Drive'.  
-Select `Choose a Virtual Optical Disk File...` and then navigate to your 'Image' of choice.
+Select `Choose a Virtual Optical Disk File...` and then navigate to your [**'Image'**](# "AKA. '.iso'") of choice.
 
 Still in the settings, go to **Network** > **Advanced Settings** > **Port Forwarding**. Add an entry with the icon on the side and cofigure it as such:  
 Name | Protocol | Host IP | Host Port | Guest IP | Guest Port
@@ -141,8 +146,8 @@ After all is done the system will try to reboot.
 
 ## Tasks
 ### SSH Server
-[Back To Top](#born-2-be-root)
 #### Setting up SSH
+[Back To Top](#born-2-be-root)  
 **S**ecure **SH**ell is a Command Line Tool used to allow *secure* remote access to a server without even being in the same continent.
 If you have not done so already, generate an ssh key on the host computer using `ssh-keygen -t rsa -b 2048`.  
 
@@ -173,7 +178,7 @@ XXX <intra-username>42 systemd[1]: Started OpenBSD Secure Shell server.
 ```
 As long as `grep Active: <<< $(sudo systemctl status ssh)` returns:  
 `Active: active (running) since Ddd YYY-MM-DD HH:MM:SS TMZN; XXX ago`  
-You should be ok.
+SSH is running.
 
 Now we have to configure the server to use the ports that **SSH** is meant to run on for the subject (4242),
 That means we need edit the *config* file for the SSH Service.
@@ -189,14 +194,25 @@ Port 4242
 Then restart ssh using `service ssh restart` to update the servers port.
 
 #### SSH Firewall
+[Back To Top](#born-2-be-root)  
 Now we need to allow the port to talk from the **VM** to the network.
-We will be using the package `ufw` to enable and disable communication ports.
+We will be using the package [`ufw`](# "Uncomplicated FireWall") to enable and disable communication ports.
 Let's start by installing the package by doing `sudo apt install ufw`.
 
-You should be able to use the ssh client on the Host machine to connect to the server.
-#### Connecting SSH
+Once installed you can run `ufw allow 4242`, and this will 'Open' the 4242 port needed to run the SSH server.
+If you have skipped the [Introduction](#creation) you may need to reallow the Virtual Box Firewall to talk to 4242.
+Upon completion you should be able to use the ssh client on the Host machine to connect to the server.
+
+#### Connecting To *VM* using SSH 
+[Back To Top](#born-2-be-root)  
+Now that we have configued and setup the necessary system to use SSH, we can finally connect to it using the Terminal on your host computer.
+
+Open up your favourite terminal app on the Host Machine and double check that `OpenSSH client` is installed by doing [__`ssh -V`__](# "Version check for SSH").
+We will now need to generate an SSH Key (You can skip this part if you already have a key), run `ssh-keygen -t rsa -b 1024 [-C comment]`.
+
 
 ## Troubleshooting
+[Back To Top](#born-2-be-root)  
 1. [`sudo apt-get update`](#ssh-server) returning `-bash: sudo: command not found`, just continue from root by typing `su -` and then the root password.
 run every subsequent command without `sudo` in front
 2. [`sudo <vim/nano> /etc/ssh/sshd_config`](#ssh-server) returning `-bash: vim: command not found`, reinstall `vim` or `nano` using `sudo apt install <vim/nano>`.
