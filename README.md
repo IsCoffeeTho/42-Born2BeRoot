@@ -77,7 +77,7 @@ A Headless machine runs all the same with a monitor and without.
 When Booting up the VM after the ***Creation*** stage you will be greeted with the  
 `Debian GNU/Linux installer menu (BIOS mode)`  
 Because we are not using a monitor based machine, select `Install`. Select your mandatory **Lanugage**, then select your **Timezone**.  
-With selecting your keyboard, if you are not sure about the language type check with your [Country's Keyboard Layout](https://en.wikipedia.org/wiki/Keyboard_layout).
+With selecting your keyboard, if you are not sure about the language type check with your [Country's Keyboard Layout](https://en.wikipedia.org/wiki/Keyboard_layout "Wikipedia Keyboard layout").
 
 The Subject requires you to have your hostname as `<intra-username>42`.
 It is recommened to leave the **Domain Name** blank as the machine will auto generate a domain name.
@@ -152,7 +152,7 @@ After all is done the system will try to reboot.
 If you have not done so already, generate an ssh key on the host computer using `ssh-keygen -t rsa -b 2048`.  
 
 Back to the **VM**, we will need to install the `openssh-server` package.
-It is good practice to update the package installer, to do so use the command `sudo apt-get update`[<sup>[1]</sup>](#troubleshooting).
+It is good practice to update the package installer, to do so use the command `sudo apt-get update`.
 Then to install the **SSH Server** simply run `sudo apt install openssh-server`.
 
 Always double check that a service is running before using it, you will save yourself from debugging the wrong thing and going into loops.
@@ -182,7 +182,7 @@ SSH is running.
 
 Now we have to configure the server to use the ports that **SSH** is meant to run on for the subject (4242),
 That means we need edit the *config* file for the SSH Service.
-Using `sudo <vim/nano> /etc/ssh/sshd_config`[<sup>[2]</sup>](#troubleshooting) replace `<vim/nano>` with the text editor of choice.
+Using `sudo <vim/nano> /etc/ssh/sshd_config` replace `<vim/nano>` with the text editor of choice.
 Double check that you are editing the `/etc/ssh/sshd_config` file and not the `.../ssh_config` file.  
 Find the line that says `#Port 22` and replace `#Port 22` with `Port 4242` resulting with:
 ```sh
