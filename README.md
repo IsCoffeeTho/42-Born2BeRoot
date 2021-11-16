@@ -1,6 +1,6 @@
 # Born 2 Be Root
 [**Picture Version**](#coming-soon)  
-[**Step By Step**](#coming-soon)
+[**Step By Step**](guide-presentation/introduction/index.md)
 
 ### Contents
   1. [Introduction](#introduction)
@@ -220,4 +220,3 @@ This is where the keys come in, it makes it easier for you to access a machine f
 ## Coming Soon
 [Back To Top](#born-2-be-root)  
  * A **Picture Version** of this guide is coming soon.
- * This Document will also soon be made into a presentation type layout.
