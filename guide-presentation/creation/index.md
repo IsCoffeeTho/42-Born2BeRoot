@@ -24,4 +24,4 @@ Rule 1 | TCP | | 4242 | | 4242
 
 You are now **ready** to get started setting up your VM Environment.
 
-[`Prev`](../introduction/index.md) || [`Next`](../setting-up/background.md "Setting Up > Background")
+[`Prev`](../introduction/index.md "Introduction") || [`Next`](../setting-up/background.md "Setting Up > Background")
