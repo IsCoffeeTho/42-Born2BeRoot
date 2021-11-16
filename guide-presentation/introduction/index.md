@@ -15,5 +15,5 @@ The Subject Documentation goes as follows:
 > You must paste in it the signature of your machine’s virtual disk.
 > Go to [Submission](../submission/Index.md) for more information.
 
-`Prev` || [`Next`](../creation/index.md "Creation")
+[`Next`](../creation/index.md "Creation")
 
