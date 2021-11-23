@@ -98,7 +98,7 @@ The Subject states:
 > * Of course, your root password has to comply with this policy.
 
 When creating the 'user' the `Full name for the new user:` can be anything you like,  
-However the `Username for your account:` must be your `<inta-username>`.  
+However the `Username for your account:` must be your `<intra-username>`.  
 Configure the Timezone to the closest area availble.
 
 #### Guided Partitioning
