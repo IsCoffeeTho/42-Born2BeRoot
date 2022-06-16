@@ -469,8 +469,22 @@ wall "	#Architecture: $arc
 
 ___
 ## Submission
+### Signature
 [Back To Top](#born-2-be-root)  
-> **NOTE**  
+On the **Host Machine** make a new folder with a file called `signature.txt`
+
+
+navigate to the directory with the **VM**s `.vdi` and run:
+```sh
+-> shasum <myVMname>.vdi
+```
+
+&nbsp;
+
+### Evaluation
+[Back To Top](#born-2-be-root)  
+The subject.pdf outlines some of the tasks that will take place during evaluations
+
 > This section is incomplete, either its soon to be written or is being written.
 
 ## Coming Soon
