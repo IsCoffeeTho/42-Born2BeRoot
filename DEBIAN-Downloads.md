@@ -3,10 +3,7 @@
 
 [Back To Presentation](guide-presentation/creation/index.md)
 
-## Debian
-[Back To Top](#image-downloads)
-
-
+### Debian
 | Version | Mirror |
 | :-- | :-- |
-| Used In _Guide_ | [**Debian 11.1.0 AMD64**](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-11.1.0-amd64-netinst.iso) |
+| Used In _Guide_ | [Debian Download Page](https://www.debian.org/download) |
