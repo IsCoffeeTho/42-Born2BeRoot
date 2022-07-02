@@ -67,7 +67,7 @@ ___
 [Back To Top](#born-2-be-root)
 
 To get Started open `VirtualBox` by Oracle. Click on _New_ and name your machine.
-When selecting Type use the `Linux` with the `Debian` option as that is the OS this guide is made for.
+When selecting Type use the `Linux` with the `Debian (64 bit)` option as that is the OS this guide is made for.
 Leave the memory at `1024 MB` (`1GB`).
 
 When creating the "Drive", make a `VDI` (Virtual Disk Image) that is Dynamically allocated.
