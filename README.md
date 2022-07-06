@@ -28,6 +28,8 @@
 		- [Applying Password Policy Timing](#applying-password-policy-timing)
 		- [Applying Password Policy Security](#applying-password-policy-security)
 	3. [Monitoring Wall](#monitoring-wall)
+		- [Monitoring Script](#monitoring-script)
+		- [Setting up `cron` job](#setting-up-cron-job)
 6. [Submission](#submission)
 
 ### Legend
@@ -425,13 +427,23 @@ enforce_for_root    # Will force the rules upon the root user
 ```
 Append each rule to line 25 without the comments while having a space to seperate them.
 
+You **MUST** now change the passwords of both the account and the root:
+```sh
+~> sudo passwd
+   &
+~> sudo passwd root
+```
+
 &nbsp;
 
 ___
 ## Monitoring Wall
+### Monitoring Script
 [Back To Top](#born-2-be-root)  
-This task gets really tedious, it is recommended to copy from the code bellow and take time to understand how it works.
+This task gets really tedious doing it by hand but there is a working version bellow, please take your time understanding how it works before using it:
 ```sh
+# /usr/share/monitoring.sh #
+
 #!/bin/bash
 arc=$(uname -a) #uname prints basic system information. -a displays all available information
 pcpu=$(grep "physical id" /proc/cpuinfo | sort | uniq | wc -l) #search for the lines "physical id" in /proc/cpuinfo and return them. Then sorts the response, removes the duplicates (uniq), does a count of the lines (wc) and prints the number of lines (-l).
@@ -464,6 +476,70 @@ wall "	#Architecture: $arc
 	#Sudo: $cmds cmd"
 ```
 ###### [Source](https://github.com/markjso/born2BeRoot-commented/blob/main/monitoring.sh)
+you can download it using:
+```sh
+~> sudo wget https://raw.githubusercontent.com/IsCoffeeTho/42-Born2BeRoot/master/monitoring.sh -O /usr/share/monitoring.sh; sudo chmod 777 /usr/share/monitoring.sh
+```
+Lets take a look at a couple of lines and understand what is written on each:
+```sh
+fdisk=$(df -BG | grep '^/dev/' | grep -v '/boot$' | awk '{ft += $2} END {print ft}')
+```
+When you see the brackets `$()` everything inside is treated as a command and it returns the result whether it be a number or a string.
+When there is a string of command seperated by `|` it means that the output of a command is piped to the next.
+The commands run in order of left to right.
+here is an example execution of the line above
+```sh
+# Get total size of drives connected
+
+df -BG | # List of filesystems with the format "Filesystem, 1G-blocks, Used, Available, Use%, Mounted on"
+grep '^/dev/' | # Look for lines that only start with `/dev/` (regex: /^\/dev\//g)
+grep -v '/boot$' | # Remove the line that ends with `/boot` (regex: /\/boot$/g)
+awk '{ft += $2} END {print ft}' # Add the value of 1G-blocks present and print result
+```
+  
+**&nbsp;**  
+Here is another line that runs with a beautiful execution cycle
+```sh
+lvmu=$(if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo no; else echo yes; fi)
+```
+lets run through the execution cycle
+```sh
+# Determine whether there are storage mediums that are using LVM
+
+if [
+	$(
+		lsblk | # List bulk drives
+		grep "lvm" | # Filter for drives that use LVM
+		wc -l # Count the lines and return the count
+	) 
+-eq 0 ]; then
+	echo no ; # if there are no connected medums using LVM print 'no'
+else
+	echo yes ; # if there are, print 'yes'
+fi
+```
+
+&nbsp;
+
+### Setting up `cron` job
+[Back To Top](#born-2-be-root)  
+Using:
+```sh
+~> sudo crontab -u root -e
+```
+You will be prompted with which editor you would to use, type the number of the according editor.
+
+You will be presented a file to add a `cron` job, to the file you just need to append
+```sh
+# m h  dom mon dow   command
+*/10 * * * * sh /usr/share/monitoring.sh
+```
+The script should now run once every ten minutes.
+
+To check the scheduled `cron` jobs use:
+```sh
+~> sudo crontab -u root -l
+```
 
 &nbsp;
 
@@ -473,20 +549,30 @@ ___
 [Back To Top](#born-2-be-root)  
 On the **Host Machine** make a new folder with a file called `signature.txt`
 
-
-navigate to the directory with the **VM**s `.vdi` and run:
+Navigate to the directory with the **VM**s `.vdi` and run:
 ```sh
--> shasum <myVMname>.vdi
+-> shasum <name of VM>.vdi
 ```
+Then paste the results in the `signature.txt` file, and you are ready to submit.
+Please note that your virtual machine’s signature may be altered after your first evaluation. To solve this problem, you can duplicate your virtual machine or use save state.
 
 &nbsp;
 
 ### Evaluation
 [Back To Top](#born-2-be-root)  
 The subject.pdf outlines some of the tasks that will take place during evaluations
-
-> This section is incomplete, either its soon to be written or is being written.
-
+```
+During the defense, you will be asked a few questions about the operating system you chose. For instance, you should know the differences between aptitude and apt, or what SELinux or AppArmor is. In short, understand what you use!
+```
+```
+The use of SSH will be tested during the defense by setting up a new account. You must therefore understand how it works.
+```
+```
+During the defense, you will have to create a new user and assign it to a group.
+```
+```
+During the defense, you will be asked to explain how this script works. You will also have to interrupt it without modifying it. Take a look at cron.
+```
 ## Coming Soon
 [Back To Top](#born-2-be-root)  
  * A **Picture Version** of this guide is coming soon.
